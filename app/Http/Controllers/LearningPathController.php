@@ -19,6 +19,23 @@ class LearningPathController extends Controller
         $learningPath = learningPath::get();
         return view('admin.learningPath', ["bahasaPemograman" => $bahasaPemograman, "learningPath" => $learningPath]);
     }
+    public function Mindex()
+    {
+        $bahasaPemograman = BahasaPemograman::get();
+        $learningPath = learningPath::get();
+        return view('mahasiswa.learningPath', ["bahasaPemograman" => $bahasaPemograman, "learningPath" => $learningPath]);
+    }
+    public function MbpDetail($bp_id)
+    {
+        $data = BahasaPemograman::find($bp_id)->BPTopik->sortByDesc('created_at');
+        return view('mahasiswa.detailBahasaPemograman', ["data" => $data]);
+    }
+    public function MbelajarBP($bpNama)
+    {
+        $bp = BahasaPemograman::where('bahasaPemograman', $bpNama)->first();
+        $data = BahasaPemograman::find($bp->id)->BPTopik->sortByDesc('created_at');
+        return view('mahasiswa.detailBahasaPemograman', ["data" => $data]);
+    }
     public function bpDetail($bp_id)
     {
         $data = BahasaPemograman::find($bp_id)->BPTopik->sortByDesc('created_at');

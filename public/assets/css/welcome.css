@@ -1,0 +1,36 @@
+.section1-2{
+    margin-top: 100px;
+    border-radius: 20px;
+    height: 200px;
+    width: 700px;
+    box-shadow: 1px 6px 12px rgb(197, 183, 183);
+    padding: 30px;
+}
+.section2{
+    margin-top: 100px;
+}
+.jd-visi{
+    width: 70px;
+    height: 80px;
+    background-color: #F2C2CB;
+}
+.visi{
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgb(197, 183, 183);
+}
+
+.section3{
+    height: 800px;
+    background-image: url('../gambar/bg/bg-section-3.png');
+    background-size: cover;
+}
+
+.visi2{
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgb(197, 183, 183);
+}
+
+.section4{
+    height: 760px;
+}

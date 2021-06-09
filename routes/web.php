@@ -27,11 +27,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// mahasiswa
-Route::group(['middleware' => ['auth','cekRole:mahasiswa']], function(){
 
-
-});
+    // pengumuman
+    Route::get('/pengumuman', 'App\Http\Controllers\PengumumanController@index');
+    Route::post('/pengumuman/aksi/{filter}/{pengumuman_id}', 'App\Http\Controllers\PengumumanController@aksi');
 
 // mahasiswa
 Route::group(['middleware' => ['auth','cekRole:mahasiswa']], function(){
@@ -48,9 +47,9 @@ Route::group(['middleware' => ['auth','cekRole:mahasiswa']], function(){
     Route::post('mahasiswa/editNotes/{note_id}', 'App\Http\Controllers\NotesController@update');
 
 
-    // pengumuman
-    Route::get('/pengumuman', 'App\Http\Controllers\PengumumanController@index');
-    Route::post('/pengumuman/aksi/{filter}/{pengumuman_id}', 'App\Http\Controllers\PengumumanController@aksi');
+    // learning path
+    Route::get('mahasiswa/learningPath', 'App\Http\Controllers\LearningPathController@Mindex');
+    Route::get('learningPt/{namaBp}', 'App\Http\Controllers\LearningPathController@MbelajarBP');
 });
 
 // admin
@@ -69,10 +68,8 @@ Route::group(['middleware' => ['auth','cekRole:admin']], function(){
     Route::post('admin/tambahLearningPath', 'App\Http\Controllers\LearningPathController@store');
 
     // pengumuman
-    Route::get('/pengumuman', 'App\Http\Controllers\PengumumanController@index');
     Route::get('/admin/aturPengumuman', 'App\Http\Controllers\PengumumanController@aturPengumuman');
     Route::get('/admin/hapusPengumuman/{pengumumanId}', 'App\Http\Controllers\PengumumanController@destroy');
-    Route::post('/pengumuman/aksi/{filter}/{pengumuman_id}', 'App\Http\Controllers\PengumumanController@aksi');
     Route::post('/admin/tambahkanPengumuman', 'App\Http\Controllers\PengumumanController@store');
 
     // atur tapilan

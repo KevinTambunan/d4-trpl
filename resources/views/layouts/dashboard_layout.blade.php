@@ -85,7 +85,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link @yield('learningPath-act')" href="{{url('mahasiswa/learningPath')}}">
               <span data-feather="compass"></span>
               Learning Path
             </a>
@@ -150,25 +150,25 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/aturTampilan/{filter}')}}">
+            <a class="nav-link" href="{{url('/')}}">
               <span data-feather="home"></span>
               D4 TRPL
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('/')}}">
               <span data-feather="award"></span>
               Lulusan
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('/')}}">
               <span data-feather="briefcase"></span>
               Prospek Kerja
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('/')}}">
               <span data-feather="users"></span>
               Daftar Dosen
             </a>
